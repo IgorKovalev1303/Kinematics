@@ -55,8 +55,8 @@ def velocity():
                             if xi1[10+k]==x1[i2][i3][i1] and xi2[10+k]==x2[i2][i3][i1]:
                                 print('xi1[', 10+k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10+k, ']==x2[', i2, '][', i3, '][', i1, ']')
             plt.plot(xi1, xi2)
-            v1=-1*(2**2)*x1[i][j][12]
-            v2=2*x2[i][j][12]
+            v1=-1*(1.2**2)*x1[i][j][12]
+            v2=1.2*x2[i][j][12]
             plt.quiver(x1[i][j][12], x2[i][j][12], (x1[i][j][12]+v1), (x2[i][j][12]+v2), angles='xy', scale_units='xy', scale=1)
     plt.subplot(2, 3, 2)
     for i in range(6):
@@ -82,8 +82,8 @@ def velocity():
                             if xi1[10+k]==x1[i2][i3][i1] and xi2[10+k]==x2[i2][i3][i1]:
                                 print('xi1[', 10+k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10+k, ']==x2[', i2, '][', i3, '][', i1, ']')
             plt.plot(xi1, xi2)
-            v1=-1*(3**2)*x1[i][j][13]
-            v2=3*x2[i][j][13]
+            v1=-1*(1.3**2)*x1[i][j][13]
+            v2=1.3*x2[i][j][13]
             plt.quiver(x1[i][j][13], x2[i][j][13], (x1[i][j][13]+v1), (x2[i][j][13]+v2), angles='xy', scale_units='xy', scale=1)
     plt.subplot(2, 3, 3)
     for i in range(6):
@@ -109,8 +109,8 @@ def velocity():
                             if xi1[10+k]==x1[i2][i3][i1] and xi2[10+k]==x2[i2][i3][i1]:
                                 print('xi1[', 10+k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10+k, ']==x2[', i2, '][', i3, '][', i1, ']')
             plt.plot(xi1, xi2)
-            v1=-1*(4**2)*x1[i][j][14]
-            v2=4*x2[i][j][14]
+            v1=-1*(1.4**2)*x1[i][j][14]
+            v2=1.4*x2[i][j][14]
             plt.quiver(x1[i][j][14], x2[i][j][14], (x1[i][j][14]+v1), (x2[i][j][14]+v2), angles='xy', scale_units='xy', scale=1)
     plt.subplot(2, 3, 4)
     for i in range(6):
@@ -136,8 +136,8 @@ def velocity():
                             if xi1[10+k]==x1[i2][i3][i1] and xi2[10+k]==x2[i2][i3][i1]:
                                 print('xi1[', 10+k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10+k, ']==x2[', i2, '][', i3, '][', i1, ']')
             plt.plot(xi1, xi2)
-            v1=-1*(5**2)*x1[i][j][15]
-            v2=5*x2[i][j][15]
+            v1=-1*(1.5**2)*x1[i][j][15]
+            v2=1.5*x2[i][j][15]
             plt.quiver(x1[i][j][15], x2[i][j][15], (x1[i][j][15]+v1), (x2[i][j][15]+v2), angles='xy', scale_units='xy', scale=1)
     plt.subplot(2, 3, 5)
     for i in range(6):
@@ -163,8 +163,8 @@ def velocity():
                             if xi1[10+k]==x1[i2][i3][i1] and xi2[10+k]==x2[i2][i3][i1]:
                                 print('xi1[', 10+k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10+k, ']==x2[', i2, '][', i3, '][', i1, ']')
             plt.plot(xi1, xi2)
-            v1=-1*(6**2)*x1[i][j][16]
-            v2=6*x2[i][j][16]
+            v1=-1*(1.6**2)*x1[i][j][16]
+            v2=1.6*x2[i][j][16]
             plt.quiver(x1[i][j][16], x2[i][j][16], (x1[i][j][16]+v1), (x2[i][j][16]+v2), angles='xy', scale_units='xy', scale=1)
     plt.subplot(2, 3, 6)
     for i in range(6):
@@ -190,7 +190,7 @@ def velocity():
                             if xi1[10+k]==x1[i2][i3][i1] and xi2[10+k]==x2[i2][i3][i1]:
                                 print('xi1[', 10+k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10+k, ']==x2[', i2, '][', i3, '][', i1, ']')
             plt.plot(xi1, xi2)
-            v1=-1*(7**2)*x1[i][j][17]
-            v2=7*x2[i][j][17]
+            v1=-1*(1.7**2)*x1[i][j][17]
+            v2=1.7*x2[i][j][17]
             plt.quiver(x1[i][j][17], x2[i][j][17], (x1[i][j][17]+v1), (x2[i][j][17]+v2), angles='xy', scale_units='xy', scale=1)
     plt.show()
