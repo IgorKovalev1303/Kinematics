@@ -1,5 +1,6 @@
-from function.kinematics.graph_kin import show_kin
-from function.pol_vel.graph_vel import show_vel
+from modules.pol_vel import velocity
+from modules.kinematics import kinem
+
 resp = None
 
 while resp != '0':
@@ -9,10 +10,12 @@ while resp != '0':
     ''')
     resp = input("=: ").strip()
     if resp == '1':
-        show_kin()
+        kinem()
     elif resp == '2':
-        show_vel()
+        velocity()
     elif resp == '0':
         print('Выход')
     else:
-        print('\nНеверные данные\n')
+        print('Неверные данные')
+    
+
