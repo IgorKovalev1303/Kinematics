@@ -1,9 +1,9 @@
-from modules.modules import MaterialPoint, MaterialBody
+from modules.modules import MaterialPoints, MaterialBody
 import matplotlib.pyplot as plt
 
 
 def kinem():
-    lagrange = MaterialPoint()
+    lagrange = MaterialPoints()
     lagrange.l_coord_x = []
     lagrange.l_coord_y = []
     for i in range(6):

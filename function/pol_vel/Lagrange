@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+from modules.modules import MaterialPoint
+
+coord_x=[]
+coord_y=[]
+velocity_x=[]
+velocity_y=[]
+a=6
+xn=-2
+yn=-1
+delta=0.2
+for i in range(a):
+    coord_x.append([])
+    coord_y.append([])
+    velocity_x.append([])
+    velocity_y.append([])
+    for j in range(a):
+        coord_x[i].append(xn+delta*j)
+        coord_y[i].append(yn+delta*i)
+        velocity_x[i].append(0)
+        velocity_y[i].append(0)
+print(coord_x)
+print(coord_y)
+print(velocity_x)
+print(velocity_y)
