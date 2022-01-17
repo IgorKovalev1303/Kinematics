@@ -3,6 +3,30 @@ class MaterialPoints:
         self.l_coord_x = l_coord_x
         self.l_coord_y = l_coord_y
 
+    def build_lines(self, t, x1, x2):
+        xi1 = self.l_coord_x
+        xi2 = self.l_coord_y
+        for k in range(1, 11):
+            k1 = -((t * xi1[10 - k + 1]) / xi2[10 - k + 1])
+            k2 = -((t * (xi1[10 - k + 1] - 0.1 * 2 / 3 * k1)) / (xi2[10 - k + 1] - 2 / 3 * 0.1))
+            k3 = -((t * (xi1[10 - k + 1] - 0.1 * (-1 / 3 * k1 + k2))) / (xi2[10 - k + 1] - 2 / 3 * 0.1))
+            xi1[10 - k] = xi1[10 - k + 1] - 0.1 * (0.25 * k1 + 0.5 * k2 + 0.25 * k3)
+            xi2[10 - k] = xi2[10 - k + 1] - 0.1
+            k1 = -((t * xi1[10 + k - 1]) / xi2[10 + k - 1])
+            k2 = -((t * (xi1[10 + k - 1] + 0.1 * 2 / 3 * k1)) / (xi2[10 + k - 1] + 2 / 3 * 0.1))
+            k3 = -((t * (xi1[10 + k - 1] + 0.1 * (-1 / 3 * k1 + k2))) / (xi2[10 + k - 1] + 2 / 3 * 0.1))
+            xi1[10 + k] = xi1[10 + k - 1] + 0.1 * (0.25 * k1 + 0.5 * k2 + 0.25 * k3)
+            xi2[10 + k] = xi2[10 + k - 1] + 0.1
+            for i1 in range(70):
+                for i2 in range(6):
+                    for i3 in range(6):
+                        if xi1[10 - k] == x1[i2][i3][i1] and xi2[10 - k] == x2[i2][i3][i1]:
+                            print('xi1[', 10 - k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10 - k, ']==x2[',
+                                  i2, '][', i3, '][', i1, ']')
+                        if xi1[10 + k] == x1[i2][i3][i1] and xi2[10 + k] == x2[i2][i3][i1]:
+                            print('xi1[', 10 + k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10 + k, ']==x2[',
+                                  i2, '][', i3, '][', i1, ']')
+
 
 class MaterialBody:
     def __int__(self, material_points_x, material_points_y):
