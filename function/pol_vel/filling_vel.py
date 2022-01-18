@@ -1,17 +1,17 @@
 import matplotlib.pyplot as plt
-from modules.modules import MaterialPoints, MaterialBody
+from modules.modules import SpacePoints, SpaceGird
 from modules.modules import ROWS, COLUMNS  # константы
 
 
 def velocity():
     t = []
-    body = MaterialBody()  # экземпляр класса MaterialBody
-    point = MaterialPoints()  # экземпляр класса MaterialPoint
-    x1 = body.material_points_x = []  # x
-    x2 = body.material_points_y = []  # y
+    gird = SpaceGird()  # экземпляр класса MaterialBody
+    point = SpacePoints()  # экземпляр класса MaterialPoint
+    x1 = gird.space_points_x = []  # x
+    x2 = gird.space_points_y = []  # y
     n = 0
-    xi1 = point.l_coord_x = []  # линии тока x
-    xi2 = point.l_coord_y = []  # линии тока y
+    xi1 = point.coord_x = []  # линии тока x
+    xi2 = point.coord_y = []  # линии тока y
     for i in range(21):
         xi1.append(0)
         xi2.append(0)
@@ -22,7 +22,7 @@ def velocity():
     plt.subplots_adjust(wspace=0.3, hspace=0.3)
 
     # заполнение координат точек твердого тела
-    body.filling_coord()
+    gird.filling_coord()
 
     '''with open("log.txt", "a") as f:
         print('x:', x1, '\n', file=f)

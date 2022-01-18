@@ -1,14 +1,17 @@
 COLUMNS = 3  # СТОЛБЦЫ
 ROWS = 3  # СТРОКИ
 
-class MaterialPoints:
-    def __int__(self, l_coord_x, l_coord_y):
-        self.l_coord_x = l_coord_x
-        self.l_coord_y = l_coord_y
+
+class SpacePoints:
+    def __int__(self, coord_x, coord_y, velocity_x, velocity_y):
+        self.coord_x = coord_x
+        self.coord_y = coord_y
+        self.velocity_x = velocity_x
+        self.velocity_y = velocity_y
 
     def build_lines(self, t, x1, x2):
-        xi1 = self.l_coord_x
-        xi2 = self.l_coord_y
+        xi1 = self.coord_x
+        xi2 = self.coord_y
         for k in range(1, 11):
             k1 = -((t * xi1[10 - k + 1]) / xi2[10 - k + 1])
             k2 = -((t * (xi1[10 - k + 1] - 0.1 * 2 / 3 * k1)) / (xi2[10 - k + 1] - 2 / 3 * 0.1))
@@ -31,14 +34,14 @@ class MaterialPoints:
                                   i2, '][', i3, '][', i1, ']')
 
 
-class MaterialBody:
-    def __int__(self, material_points_x, material_points_y):
-        self.material_points_x = material_points_x
-        self.material_points_y = material_points_y
+class SpaceGird:
+    def __int__(self, space_points_x, space_points_y):
+        self.space_points_x = space_points_x
+        self.space_points_y = space_points_y
 
     def filling_coord(self):
-        x1 = self.material_points_x
-        x2 = self.material_points_y
+        x1 = self.space_points_x
+        x2 = self.space_points_y
         for i in range(ROWS):  # i создание точек квадрата, имеющих одинаковую координату по оси ординат
             x1.append([])
             x2.append([])
@@ -71,14 +74,12 @@ class BodyTrajectory:
         self.material_body = material_body
 
 
-class SpacePoint:
-    def __init__(self, coord_x, coord_y, velocity_x, velocity_y):
-        self.coord_x = coord_x
-        self.coord_y = coord_y
-        self.velocity_x = velocity_x
-        self.velocity_y = velocity_y
+class MaterialPoints:
+    def __int__(self, l_coord_x, l_coord_y):
+        self.l_coord_x = l_coord_x
+        self.l_coord_y = l_coord_y
 
 
-class SpaceGrid:
-    def __init__(self, space_points):
-        self.space_points = space_points
+class MaterialBody:
+    def __int__(self, material_points):
+        self.material_points = material_points
