@@ -10,7 +10,7 @@ def kinem():
         for j in range(6):
             lagrange.l_coord_x.append(-2 + j / 5)
             lagrange.l_coord_y.append(-1 - i / 5)
-            for n in range(70):
+            for n in range(15):
                 k11 = -((0.1 * n) ** 2) * lagrange.l_coord_x[n]
                 k12 = -((0.1 * n + 1 / 15) ** 2) * (lagrange.l_coord_x[n] + 1 / 15 * k11)
                 k13 = -((0.1 * n + 1 / 15) ** 2) * (lagrange.l_coord_x[n] + 0.1 * (-1 / 3 * k11 + k12))
