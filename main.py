@@ -1,5 +1,6 @@
 from function.kinematics.graph_kin import show_kin
 from function.pol_vel.graph_vel import show_vel
+
 resp = None
 
 while resp != '0':

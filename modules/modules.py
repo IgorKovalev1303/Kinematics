@@ -1,3 +1,6 @@
+COLUMNS = 3  # СТОЛБЦЫ
+ROWS = 3  # СТРОКИ
+
 class MaterialPoints:
     def __int__(self, l_coord_x, l_coord_y):
         self.l_coord_x = l_coord_x
@@ -18,8 +21,8 @@ class MaterialPoints:
             xi1[10 + k] = xi1[10 + k - 1] + 0.1 * (0.25 * k1 + 0.5 * k2 + 0.25 * k3)
             xi2[10 + k] = xi2[10 + k - 1] + 0.1
             for i1 in range(70):
-                for i2 in range(6):
-                    for i3 in range(6):
+                for i2 in range(ROWS):
+                    for i3 in range(COLUMNS):
                         if xi1[10 - k] == x1[i2][i3][i1] and xi2[10 - k] == x2[i2][i3][i1]:
                             print('xi1[', 10 - k, ']==x1[', i2, '][', i3, '][', i1, '], ', 'xi2[', 10 - k, ']==x2[',
                                   i2, '][', i3, '][', i1, ']')
@@ -36,10 +39,10 @@ class MaterialBody:
     def filling_coord(self):
         x1 = self.material_points_x
         x2 = self.material_points_y
-        for i in range(6):  # i создание точек квадрата, имеющих одинаковую координату по оси ординат
+        for i in range(ROWS):  # i создание точек квадрата, имеющих одинаковую координату по оси ординат
             x1.append([])
             x2.append([])
-            for j in range(6):  # переход на новый уровень вниз по оси ординат
+            for j in range(COLUMNS):  # переход на новый уровень вниз по оси ординат
                 x1[i].append([])
                 x2[i].append([])
                 x1[i][j].append(-2 + j / 5)  # x[[[-2]]] - x

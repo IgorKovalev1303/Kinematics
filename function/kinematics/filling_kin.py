@@ -1,4 +1,4 @@
-from modules.modules import MaterialPoints, MaterialBody
+from modules.modules import MaterialPoints
 import matplotlib.pyplot as plt
 
 
