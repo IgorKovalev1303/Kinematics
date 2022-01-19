@@ -48,8 +48,8 @@ class SpaceGird:
             for j in range(COLUMNS):  # переход на новый уровень вниз по оси ординат
                 x1[i].append([])
                 x2[i].append([])
-                x1[i][j].append(-2 + j / 5)  # x[[[-2]]] - x
-                x2[i][j].append(-1 - i / 5)  # x[[[-1]]] - y
+                x1[i][j].append(-2 + j / 2)  # x[[[-2]]] - x
+                x2[i][j].append(-1 - i / 2)  # x[[[-1]]] - y
                 for n in range(70):  # изменение координаты во времени
                     k11 = -((0.1 * n) ** 2) * x1[i][j][n]
                     k12 = -((0.1 * n + 1 / 15) ** 2) * (x1[i][j][n] + 1 / 15 * k11)
