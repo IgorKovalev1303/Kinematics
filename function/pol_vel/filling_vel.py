@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from modules.modules import SpacePoints, SpaceGird
 from modules.modules import ROWS, COLUMNS  # константы
+import numpy as np
 
 
 def velocity():
@@ -37,6 +38,7 @@ def velocity():
             point.build_lines(t[12], x1, x2)
 
             plt.plot(xi1, xi2)
+            '''
             v1 = -1 * (1.2 ** 2) * x1[i][j][12]
             v2 = 1.2 * x2[i][j][12]
 
@@ -44,6 +46,9 @@ def velocity():
             plt.title(label='t=1,2', fontsize=8)
             plt.quiver(x1[i][j][12], x2[i][j][12], (x1[i][j][12] + v1), (x2[i][j][12] + v2), angles='xy',
                        scale_units='xy', scale=1)
+            '''
+    plt.subplot(2, 3, 2)
+    vector(t[12])
     plt.subplot(2, 3, 3)
     for i in range(ROWS):
         for j in range(COLUMNS):
@@ -55,6 +60,7 @@ def velocity():
             point.build_lines(t[13], x1, x2)
 
             plt.plot(xi1, xi2)
+            '''
             v1 = -1 * (1.3 ** 2) * x1[i][j][13]
             v2 = 1.3 * x2[i][j][13]
 
@@ -62,6 +68,9 @@ def velocity():
             plt.title(label='t=1,3', fontsize=8)
             plt.quiver(x1[i][j][13], x2[i][j][13], (x1[i][j][13] + v1), (x2[i][j][13] + v2), angles='xy',
                        scale_units='xy', scale=1)
+            '''
+    plt.subplot(2, 3, 4)
+    vector(t[13])
     plt.subplot(2, 3, 5)
     for i in range(ROWS):
         for j in range(COLUMNS):
@@ -73,6 +82,7 @@ def velocity():
             point.build_lines(t[14], x1, x2)
 
             plt.plot(xi1, xi2)
+            '''
             v1 = -1 * (1.4 ** 2) * x1[i][j][14]
             v2 = 1.4 * x2[i][j][14]
 
@@ -80,5 +90,16 @@ def velocity():
             plt.title(label='t=1,4', fontsize=8)
             plt.quiver(x1[i][j][14], x2[i][j][14], (x1[i][j][14] + v1), (x2[i][j][14] + v2), angles='xy',
                        scale_units='xy', scale=1)
+            '''
+    plt.subplot(2, 3, 6)
+    vector(t[14])
 
     return plt
+
+
+def vector(t):
+    for y in np.arange(5, -5, -0.5):
+        for x in np.arange(-5, 5, 0.5):
+            v1 = -1 * (t ** 2) * x
+            v2 = t * y
+            plt.quiver(x, y, v1, v2)
